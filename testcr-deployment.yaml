@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: cr_deployment
+  name: cr-deployment
 spec:
   replicas: 3  # Set the desired number of replicas (pods)
   selector:
