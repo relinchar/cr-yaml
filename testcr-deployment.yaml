@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cr_deployment
+spec:
+  replicas: 3  # Set the desired number of replicas (pods)
+  selector:
+    matchLabels:
+      app: cr-djangoapp
+  template:
+    metadata:
+      labels:
+        app: cr-djangoapp
+    spec:
+      containers:
+      - name: your-app-container
+        image: gcr.io/cr-modified-alveroamadorfausto/cr-django:latest
+        ports:
+        - containerPort: 80
